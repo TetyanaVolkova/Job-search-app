@@ -1,0 +1,70 @@
+<div id="search_wrapper">
+    <div id="forms_wrapper">
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <mat-form-field appearance="outline">
+                <mat-label for="name">
+                    Enter Search Term
+                </mat-label>
+                <input required matInput name="search" ngModel>
+            </mat-form-field>
+            <button mat-button [disabled]="!f.valid" color="primary" type="submit">Search jobs</button>
+        </form>
+
+        <form id="toggle_form" [formGroup]="formGroup" ngNativeValidate>
+            <mat-slide-toggle formControlName="view" (change)="onFormChange()">{{formGroup.value.view ? 'Accordion View' : 'Cards View'}}
+            </mat-slide-toggle>
+        </form>
+    </div>
+    <mat-divider [style.display]="moreDetails? 'none' : 'block'">
+    </mat-divider>
+    <div *ngIf="!formGroup.value.view" id="cards_wrapper">
+        <div *ngFor="let job of jobs">
+            <mat-card id="card-{{job.id}}" class="card">
+                <mat-card-header>
+                    <div mat-card-avatar>
+                        <button mat-icon-button class="fave_button" matTooltip="Add to favorites" matTooltipClass="tooltip_red" aria-label="heart icon">
+                            <mat-icon>favorite</mat-icon>
+                        </button>
+                    </div>
+                    <mat-card-title><small>Company name: </small>{{job.company_name}}</mat-card-title>
+                    <mat-card-subtitle>{{job.title}}</mat-card-subtitle>
+                </mat-card-header>
+
+                <mat-card-content style="display: block">
+                    <div class="mat-card-content-left">
+
+                        <div id="{{job.id}}-div">
+                            <p id="{{job.id}}"></p>
+                        </div>
+                        <p>
+                            <small>Posted: </small> {{job.publication_date | date}}
+                        </p>
+                        <div id="{{job.id}}-chart" class="job-match-radar-chart" *ngIf="moreDetails"></div>
+
+                    </div>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button color="custom" mat-button [matTooltip]="moreDetails? 'Click For Less Details': 'Click For More Details'" matTooltipPosition="above" (click)="onMoreDetails(job)">
+                        {{moreDetails? "Less ": "More "}}details
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+    <div *ngIf="formGroup.value.view" id="chart_view">
+        <mat-accordion>
+            <mat-expansion-panel *ngFor="let job of jobs" hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        {{job.company_name}}
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        {{job.title}}
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <span [innerHTML]="job.description"></span>
+            </mat-expansion-panel>
+        </mat-accordion>
+
+    </div>
+</div>

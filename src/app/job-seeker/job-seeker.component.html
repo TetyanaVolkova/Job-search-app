@@ -1,0 +1,16 @@
+<mat-sidenav-container class="container">
+    <mat-sidenav #sidenav mode="side" opened class="sidenav" [fixedInViewport]="options.value.fixed" [fixedTopGap]="options.value.top" [fixedBottomGap]="options.value.bottom">
+        <div routerLink="profile" routerLinkActive="active" class="pink" (click)="sidenav.close()">MY PROFILE</div>
+        <div routerLink="search" routerLinkActive="active" class="grey" (click)="sidenav.close()">SEARCH </div>
+        <div class="peach">FAVORITES</div>
+        <div class="light-pink">INTERVIEWS</div>
+        <div class="yellow">CALENDAR</div>
+        <div class="blue-grey">NOTES</div>
+        <div class="dark-grey">SETTINGS</div>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="toggle-container">
+        <button mat-button id="bookmark_button" (click)="sidenav.toggle()">MENU</button>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

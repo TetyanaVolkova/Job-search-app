@@ -1,0 +1,17 @@
+.profile_card {
+    width: 80%;
+    margin: auto;
+    .img_container {
+        width: 100%;
+        img {
+            width: auto;
+            height: 50vh;
+            margin: auto;
+        }
+    }
+}
+
+.profile_header_image {
+    background-image: url('/assets/images/avatar.jpg');
+    background-size: cover;
+}

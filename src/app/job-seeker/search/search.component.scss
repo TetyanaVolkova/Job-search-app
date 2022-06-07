@@ -1,0 +1,123 @@
+:host {
+    width: 100%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 36vw;
+    height: 180px;
+}
+
+#cards_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 20px;
+    justify-content: center;
+    padding-bottom: 100px;
+}
+
+.mat-card-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-left: 20px;
+    overflow: auto;
+}
+
+.job-match-radar-chart {
+    width: 250px;
+    position: fixed;
+    top: 190px;
+    right: 80px;
+}
+
+.mat-card-content p:first-child {
+    overflow: auto;
+    flex-grow: 1;
+}
+
+.fave_button {
+    color: rgb(144, 144, 144);
+}
+
+.fave_button:hover {
+    color: red;
+    background: rgb(247, 231, 231);
+}
+
+small {
+    color: rgb(5, 43, 168);
+}
+
+::ng-deep .mat-card-actions {
+    display: flex !important;
+    justify-content: flex-end;
+}
+
+form {
+    width: 100%;
+    text-align: center;
+}
+
+.mat-divider {
+    width: 80%;
+    margin: auto;
+}
+
+.more_details {
+    height: calc(100vh - 110px);
+    width: calc(100vw - 180px);
+    position: fixed;
+    display: flex;
+    z-index: 99999999;
+    top: 72px;
+    left: 140px;
+    .mat-card-content p:first-child {
+        padding: 24px;
+    }
+}
+
+.overflow_hidden {
+    height: 0;
+    overflow: hidden;
+}
+
+#chart_view {
+    height: 75vh;
+    width: 93%;
+    margin-left: 4vw;
+}
+
+iframe {
+    height: 100%;
+    width: 100%;
+}
+
+#forms_wrapper {
+    display: flex;
+}
+
+#toggle_form {
+    margin-top: 18px;
+}
+
+mat-panel-title {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+mat-panel-description {
+    color: black;
+    font-size: 16px;
+}
+
+.mat-custom {
+    background: #f4eeee;
+    color: rgb(130, 3, 3);
+    &:hover {
+        background: #e7c9c9;
+    }
+}

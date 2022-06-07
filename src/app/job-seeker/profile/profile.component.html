@@ -1,0 +1,19 @@
+<mat-card class="profile_card">
+    <mat-card-header>
+        <div mat-card-avatar class="profile_header_image"></div>
+        <mat-card-title>Tetyana Volkova</mat-card-title>
+        <mat-card-subtitle>Full Stack Developer</mat-card-subtitle>
+    </mat-card-header>
+    <div class="img_container">
+        <img mat-card-image src="assets/images/profile-image.jpg" alt="Profile Photo">
+    </div>
+    <mat-card-content>
+        <p>Full Stack Developer skilled in multitasking and working on several projects simultaneously in both Agile and Waterfall settings. Track record of performance leading coding, testing, documentation, implementation, and maintenance of information
+            technology solutions for business processes and applications.
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button routerLink="/job-seeker/search">SEARCH JOBS</button>
+        <button (click)="backToResume()" mat-button>SEE RESUME</button>
+    </mat-card-actions>
+</mat-card>
