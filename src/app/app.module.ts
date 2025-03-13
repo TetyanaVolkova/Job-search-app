@@ -23,6 +23,12 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { FavoritesComponent } from './job-seeker/favorites/favorites.component';
+import { SharedMessageComponent } from './job-seeker/shared-message/shared-message.component';
+import { InterviewsComponent } from './job-seeker/interviews/interviews.component';
+import { CalendarComponent } from './job-seeker/calendar/calendar.component';
+import { NotesComponent } from './job-seeker/notes/notes.component';
+import { SettingsComponent } from './job-seeker/settings/settings.component';
 
 
 @NgModule({
@@ -30,7 +36,13 @@ import { MatExpansionModule } from '@angular/material/expansion';
     AppComponent,
     JobSeekerComponent,
     SearchComponent,
-    ProfileComponent
+    ProfileComponent,
+    FavoritesComponent,
+    SharedMessageComponent,
+    InterviewsComponent,
+    CalendarComponent,
+    NotesComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,

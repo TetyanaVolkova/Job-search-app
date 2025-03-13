@@ -50,6 +50,7 @@
                 </mat-card-actions>
             </mat-card>
         </div>
+        <div *ngIf="!jobs.length">No job match</div>
     </div>
     <div *ngIf="formGroup.value.view" id="chart_view">
         <mat-accordion>

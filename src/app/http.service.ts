@@ -11,12 +11,12 @@ export class HttpService {
 
   getJobs(search) {
     if(search === null) {
-      return this.http.get('https://remotive.io/api/remote-jobs?category=software-dev&limit=20').pipe(
+      return this.http.get('https://remotive.com/api/remote-jobs?category=software-dev&limit=20').pipe(
         catchError(err => {
           throw err;
       })
     )}
-    return this.http.get('https://remotive.io/api/remote-jobs?search=' + search).pipe(
+    return this.http.get('https://remotive.com/api/remote-jobs?search='+search).pipe(
       catchError(err => {
         throw err;
       })
