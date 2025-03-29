@@ -1,6 +1,6 @@
 import { MatInputModule } from '@angular/material/input';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +29,8 @@ import { InterviewsComponent } from './job-seeker/interviews/interviews.componen
 import { CalendarComponent } from './job-seeker/calendar/calendar.component';
 import { NotesComponent } from './job-seeker/notes/notes.component';
 import { SettingsComponent } from './job-seeker/settings/settings.component';
+import { TableComponent } from './job-seeker/table/table.component';
+import { KeysPipe } from './job-seeker/table/keys-pipe.pipe';
 
 
 @NgModule({
@@ -42,8 +44,11 @@ import { SettingsComponent } from './job-seeker/settings/settings.component';
     InterviewsComponent,
     CalendarComponent,
     NotesComponent,
-    SettingsComponent
+    SettingsComponent,
+    TableComponent,
+    KeysPipe
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     BrowserModule,
     CommonModule,

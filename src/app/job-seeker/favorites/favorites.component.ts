@@ -1,3 +1,6 @@
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,11 +8,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './favorites.component.html',
   styleUrls: ['./favorites.component.scss']
 })
-export class FavoritesComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class FavoritesComponent {
 
 }

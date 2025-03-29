@@ -1,5 +1,9 @@
 :host {
     width: 100%;
+    #note {
+        margin: 20px 100px;
+        text-align: end;
+    }
 }
 
 .card {
@@ -7,6 +11,7 @@
     flex-direction: column;
     justify-content: space-between;
     width: 36vw;
+    
     height: 180px;
 }
 
