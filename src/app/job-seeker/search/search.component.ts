@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/http.service';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, Validators, UntypedFormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-search',
@@ -11,10 +11,10 @@ export class SearchComponent implements OnInit {
   jobs = [];
   moreDetails = false;
   isChecked = true;
-  formGroup: FormGroup;
+  formGroup: UntypedFormGroup;
 
   constructor(private httpService: HttpService,
-              formBuilder: FormBuilder) {
+              formBuilder: UntypedFormBuilder) {
       this.formGroup = formBuilder.group({
         view: ''
     });

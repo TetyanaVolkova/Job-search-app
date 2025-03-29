@@ -133,7 +133,6 @@
       }
     }
   },
-  "defaultProject": "search-stars",
   "cli": {
     "analytics": false
   }
