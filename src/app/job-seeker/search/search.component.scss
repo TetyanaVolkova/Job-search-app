@@ -3,7 +3,14 @@
     #note {
         margin: 20px 100px;
         text-align: end;
+        font-size: 18px;
     }
+}
+
+mat-accordion {
+    gap: 3px;
+    display: flex;
+    flex-direction: column;
 }
 
 .card {
@@ -18,9 +25,9 @@
 #cards_wrapper {
     display: flex;
     flex-wrap: wrap;
-    grid-gap: 20px;
+    gap: 20px;
     justify-content: center;
-    padding-bottom: 100px;
+    margin-top: 40px;
 }
 
 .mat-card-content {
@@ -28,7 +35,7 @@
     flex-direction: column;
     flex-grow: 1;
     margin-left: 20px;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .job-match-radar-chart {
@@ -122,6 +129,10 @@ mat-panel-description {
 .mat-custom {
     background: #f4eeee;
     color: rgb(130, 3, 3);
+    border-style: solid;
+    border-color: #c2c1c1;
+    font-size: 14px;
+    font-weight: 500;
     &:hover {
         background: #e7c9c9;
     }

@@ -2,8 +2,12 @@
     flex-direction: column;
     display: flex;
     height: 100%;
-}
 
-h5 {
-    flex: 1;
+    h5 {
+        flex: 1;
+    }
+    small {
+        margin-right: 18px;
+        cursor: pointer;
+    }
 }
