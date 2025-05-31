@@ -5,6 +5,16 @@
         text-align: end;
         font-size: 18px;
     }
+
+    #search_button {
+        background: #d8ddec;
+        color: black;
+        margin-left: 10px;
+        cursor: pointer;
+        &:hover {
+            background: #b2c2f2 !important;
+        }
+    }
 }
 
 mat-accordion {
@@ -18,7 +28,6 @@ mat-accordion {
     flex-direction: column;
     justify-content: space-between;
     width: 36vw;
-    
     height: 180px;
 }
 
@@ -30,12 +39,12 @@ mat-accordion {
     margin-top: 40px;
 }
 
-.mat-card-content {
+::ng-deep .mat-mdc-card-content {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     margin-left: 20px;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .job-match-radar-chart {
@@ -98,8 +107,8 @@ form {
 
 #chart_view {
     height: 75vh;
-    width: 93%;
-    margin-left: 4vw;
+    width: 88%;
+    margin: 25px auto;
 }
 
 iframe {

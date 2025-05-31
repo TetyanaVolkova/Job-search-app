@@ -1,8 +1,17 @@
 <div *ngIf="columns | async as tableColumns" class="container">
+    <p id="explanation">This is a code example for generating a table with random content, suitable for database or other uses. You can add new columns or remove existing ones, and the generated data can be downloaded in CSV, SQL, or JSON format.</p>
+    <div id="input_container">
+        <label>Enter a rows count and press Enter:</label>
+        <input
+            id="count_input"
+            type="number"
+            [value]="rowsCount"
+            (keydown.enter)="onEnterPressed($event)"
+            placeholder="Enter a rows count and press Enter" />
+    </div>
     <div class="actions">
         <button class="add_column" mat-raised-button (click)="openAddDialogWindow()"> Add column</button>
         <button [disabled]="displayedColumns.length <= 1" class="remove_column" mat-raised-button (click)="openRemoveDialogWindow()"> Remove column</button>
-
         <app-download-button [format]="'csv'" [data]="data"></app-download-button>
         <app-download-button [format]="'sql'" [data]="data"></app-download-button>
         <app-download-button [format]="'json'" [data]="data"></app-download-button>

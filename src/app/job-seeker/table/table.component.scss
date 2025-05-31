@@ -1,7 +1,22 @@
 :host {
     width: 100%;
     min-width: 600px;
-
+    #explanation {
+        font-size: 18px;
+        margin: 40px;
+        font-weight: bold;
+    }
+    #input_container {
+        display: flex;
+        margin: 0 60px;
+        label {
+            margin: auto 12px auto auto;
+        }
+        #count_input {
+            width: 100px;
+            // margin-left: auto;
+        }
+    }
     .container {
         // padding: 2%;
     }
@@ -51,10 +66,12 @@
     }
     
     .actions {
-        padding: 35px 0;
+        padding: 35px 60px;
         display: flex;
         justify-content: flex-end;
         gap: 3%;
+        flex-wrap: wrap;
+        
     }
     
     table {
@@ -99,7 +116,8 @@
     
     button {
         display: block;
-        width: 250px;
+        width: auto;
+        height: auto;
         font-weight: 500;
         border: none;
         padding: 10px;

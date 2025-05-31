@@ -1,5 +1,5 @@
 button {
-    width: 110px;
+    width: auto;
     background: #faa6a6;
     &:hover {
         background: #fcb8b8;
@@ -55,10 +55,10 @@ button {
         #button_container {
             display: flex;
             gap: 16px;
-            justify-content: end;
+            justify-content: flex-end;
             flex-direction: row;
             button {
-                width: 180px;
+                width: auto;
                 height: 50px;
             }
         }

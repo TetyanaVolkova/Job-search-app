@@ -32,6 +32,7 @@ import { SettingsComponent } from './job-seeker/settings/settings.component';
 import { TableComponent } from './job-seeker/table/table.component';
 import { KeysPipe } from './job-seeker/table/keys-pipe.pipe';
 import { DownloadButtonComponent } from './job-seeker/download-button/download-button.component';
+import { LoaderComponent } from './job-seeker/loader/loader.component';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { DownloadButtonComponent } from './job-seeker/download-button/download-b
     SettingsComponent,
     TableComponent,
     DownloadButtonComponent,
+    LoaderComponent,
     KeysPipe
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

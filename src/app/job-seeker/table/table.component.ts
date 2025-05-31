@@ -21,10 +21,10 @@ export class TableComponent {
   
   constructor(private tableService: TableService) {
   }
-
+  rowsCount = 1000;
   displayedColumns: string[] = ['id', 'user name', 'company name', 'company phrase', 'country'];
 
-  data: any[] = this.tableService.prePopulateTable(1000);
+  data: any[] = this.tableService.prePopulateTable(this.rowsCount);
   columns: Observable<any[]> | null = of(this.data) || null;
   openAddDialog = false;
   openRemoveDialog = false;
@@ -143,6 +143,18 @@ export class TableComponent {
 
   download(format: string): void {
     console.log(format);
+  }
+
+  onEnterPressed(event: KeyboardEvent): void {
+    if ((event.target as HTMLInputElement).valueAsNumber > 10000) {
+      this.rowsCount = 10000;
+    } else {
+      this.rowsCount = (event.target as HTMLInputElement).valueAsNumber;
+    }
+    this.columns = of(this.tableService.prePopulateTable(null));
+    setTimeout(() => {
+      this.columns = of(this.tableService.prePopulateTable(this.rowsCount));
+    });
   }
 
 }

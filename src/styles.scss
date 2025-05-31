@@ -3,15 +3,12 @@
 
 // Choose ONE theme system
 
-// If you're using legacy components:
-@include mat.legacy-core();
 $my-theme: mat.define-light-theme((
   color: (
     primary: mat.define-palette(mat.$indigo-palette),
     accent: mat.define-palette(mat.$pink-palette),
   )
 ));
-@include mat.all-legacy-component-themes($my-theme);
 
 html,
 body {
@@ -29,4 +26,5 @@ body {
     height: 60px;
     min-height: 60px;
     max-height: 60px;
+    z-index: 99;
 }
