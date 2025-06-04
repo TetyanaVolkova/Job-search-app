@@ -125,7 +125,7 @@ export class TableComponent implements OnInit {
       } else if(this.columnType === 'authCode') {
         element[this.columnName] = faker.helpers.fromRegExp(/[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}/);
       } else if(this.columnType === 'avatar url') {
-        element[this.columnName] = faker.internet.avatar();
+        element[this.columnName] = faker.image.avatar();
       } else if(this.columnType === 'jbId') {
         element[this.columnName] = faker.internet.displayName();
       } else if(this.columnType === 'email') {
