@@ -26,7 +26,7 @@ const routes: Routes = [
   ]},
   {
     path: '**',
-    redirectTo: 'access/sign-in',
+    redirectTo: 'job-seeker/profile',
     pathMatch: 'full'
   }
 ];

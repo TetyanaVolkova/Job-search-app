@@ -15,6 +15,6 @@ export class AppComponent implements OnInit {
   }
 
   navigateToWebPage(): void {
-    window.location.href = 'http://tetyanavolkova.com/'
+    window.location.href = 'https://tetyanavolkova.com/'
   }
 }

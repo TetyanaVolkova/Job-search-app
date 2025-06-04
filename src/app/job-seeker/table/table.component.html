@@ -1,13 +1,27 @@
 <div *ngIf="columns | async as tableColumns" class="container">
-    <p id="explanation">This is a code example for generating a table with random content, suitable for database or other uses. You can add new columns or remove existing ones, and the generated data can be downloaded in CSV, SQL, or JSON format.</p>
+    <p class="explanation">This is a code example for generating a table with random content, suitable for database or other uses. 
+        You can add new columns or remove existing ones, and the generated data can be downloaded in CSV, SQL, or JSON format.
+    </p>
+    <p class="explanation">To generate realictic data I used <a target="_blank" href="https://www.npmjs.com/package/@faker-js/faker">faker.js</a></p>
     <div id="input_container">
-        <label>Enter a rows count and press Enter:</label>
-        <input
-            id="count_input"
-            type="number"
-            [value]="rowsCount"
-            (keydown.enter)="onEnterPressed($event)"
-            placeholder="Enter a rows count and press Enter" />
+        <mat-form-field appearance="outline">
+            <mat-label>Enter a rows count and press Enter:</mat-label>
+            <input
+                matInput
+                id="count_input"
+                type="number"
+                [(ngModel)]="rowsCount"
+                (keydown.enter)="onEnterPressed(rowsCount)"
+                placeholder="Enter a rows count and press Enter" />
+            <button
+                id="check_button"
+                mat-icon-button
+                matSuffix
+                aria-label="Submit rows count"
+                (click)="onEnterPressed(rowsCount)">
+                <mat-icon>check</mat-icon>
+            </button>
+        </mat-form-field>
     </div>
     <div class="actions">
         <button class="add_column" mat-raised-button (click)="openAddDialogWindow()"> Add column</button>

@@ -1,19 +1,23 @@
 :host {
     width: 100%;
     min-width: 600px;
-    #explanation {
+    .explanation {
         font-size: 18px;
-        margin: 40px;
+        margin: 20px 40px;
         font-weight: bold;
     }
     #input_container {
         display: flex;
-        margin: 0 60px;
-        label {
-            margin: auto 12px auto auto;
+        justify-content: end;
+        mat-form-field {
+            margin-right: 60px;
+            #check_button {
+                margin: 0;
+                background: #92bec3;
+            }
         }
         #count_input {
-            width: 100px;
+            width: 160px;
             // margin-left: auto;
         }
     }
@@ -167,7 +171,7 @@
     
     #dialog_container {
         position: fixed;
-        top: 50px;
+        top: 100px;
         left: 20%;
         width: 60%;
         height: 78%;

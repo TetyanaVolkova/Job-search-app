@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { faker } from '@faker-js/faker';
+import { en, faker } from '@faker-js/faker';
 import { TableService } from './table.service';
 
 enum Aircraft {
@@ -17,10 +17,17 @@ export type AircraftType = `${Aircraft}`;
   styleUrls: ['./table.component.scss']
 })
 
-export class TableComponent {
+export class TableComponent implements OnInit {
   
   constructor(private tableService: TableService) {
   }
+  ngOnInit(): void {
+    this.columns.subscribe((col) => {
+      this.oldColumns = [...col.slice( 0, this.rowsCount )];
+    })
+  }
+
+  oldColumns = [];
   rowsCount = 1000;
   displayedColumns: string[] = ['id', 'user name', 'company name', 'company phrase', 'country'];
 
@@ -82,7 +89,6 @@ export class TableComponent {
       return columnName !== this.columnToRemove.toLowerCase();
   });
     this.data.map((item) => {
-      console.log(item)
       delete item[this.columnToRemove]
     })
     setTimeout(() => {
@@ -137,7 +143,6 @@ export class TableComponent {
   }
 
   checkName(name: string): boolean {
-    console.log(name);
     return true;
   }
 
@@ -145,16 +150,17 @@ export class TableComponent {
     console.log(format);
   }
 
-  onEnterPressed(event: KeyboardEvent): void {
-    if ((event.target as HTMLInputElement).valueAsNumber > 10000) {
+  onEnterPressed(event: number): void {
+    this.columns = null;
+    if (event > 10000) {
       this.rowsCount = 10000;
+      alert('A maximum of 10,000 rows is allowed.')
     } else {
-      this.rowsCount = (event.target as HTMLInputElement).valueAsNumber;
+      this.rowsCount = event;
     }
-    this.columns = of(this.tableService.prePopulateTable(null));
     setTimeout(() => {
-      this.columns = of(this.tableService.prePopulateTable(this.rowsCount));
-    });
+      this.columns = of(this.oldColumns.splice(0, this.rowsCount));
+    }, 1000)
   }
 
 }
