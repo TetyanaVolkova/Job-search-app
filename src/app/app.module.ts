@@ -17,7 +17,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { SearchComponent } from './job-seeker/search/search.component';
 import { ProfileComponent } from './job-seeker/profile/profile.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -35,47 +35,40 @@ import { DownloadButtonComponent } from './job-seeker/download-button/download-b
 import { LoaderComponent } from './job-seeker/loader/loader.component';
 
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    JobSeekerComponent,
-    SearchComponent,
-    ProfileComponent,
-    FavoritesComponent,
-    SharedMessageComponent,
-    InterviewsComponent,
-    CalendarComponent,
-    NotesComponent,
-    SettingsComponent,
-    TableComponent,
-    DownloadButtonComponent,
-    LoaderComponent,
-    KeysPipe
-  ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  imports: [
-    BrowserModule,
-    CommonModule,
-    HttpClientModule,
-    RouterModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonToggleModule,
-    MatButtonModule,
-    MatSlideToggleModule,
-    MatFormFieldModule,
-    MatSidenavModule,
-    MatInputModule,
-    MatCardModule,
-    MatTooltipModule,
-    MatDividerModule,
-    MatExpansionModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        JobSeekerComponent,
+        SearchComponent,
+        ProfileComponent,
+        FavoritesComponent,
+        SharedMessageComponent,
+        InterviewsComponent,
+        CalendarComponent,
+        NotesComponent,
+        SettingsComponent,
+        TableComponent,
+        DownloadButtonComponent,
+        LoaderComponent,
+        KeysPipe
+    ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        CommonModule,
+        RouterModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonToggleModule,
+        MatButtonModule,
+        MatSlideToggleModule,
+        MatFormFieldModule,
+        MatSidenavModule,
+        MatInputModule,
+        MatCardModule,
+        MatTooltipModule,
+        MatDividerModule,
+        MatExpansionModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
