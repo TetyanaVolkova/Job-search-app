@@ -12,9 +12,10 @@ enum Aircraft {
 export type AircraftType = `${Aircraft}`;
 
 @Component({
-  selector: 'app-table',
-  templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss']
+    selector: 'app-table',
+    templateUrl: './table.component.html',
+    styleUrls: ['./table.component.scss'],
+    standalone: false
 })
 
 export class TableComponent implements OnInit {

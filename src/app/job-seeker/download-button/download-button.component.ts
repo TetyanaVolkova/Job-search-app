@@ -3,9 +3,10 @@ import { Component, Input } from '@angular/core';
 import { utils, writeFile } from 'xlsx';
 
 @Component({
-  selector: 'app-download-button',
-  templateUrl: './download-button.component.html',
-  styleUrls: ['./download-button.component.scss']
+    selector: 'app-download-button',
+    templateUrl: './download-button.component.html',
+    styleUrls: ['./download-button.component.scss'],
+    standalone: false
 })
 export class DownloadButtonComponent {
   constructor(private httpClient: HttpClient) {}

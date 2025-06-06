@@ -3,9 +3,10 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { HttpService } from '../http.service';
 
 @Component({
-  selector: 'app-job-seeker',
-  templateUrl: './job-seeker.component.html',
-  styleUrls: ['./job-seeker.component.scss']
+    selector: 'app-job-seeker',
+    templateUrl: './job-seeker.component.html',
+    styleUrls: ['./job-seeker.component.scss'],
+    standalone: false
 })
 export class JobSeekerComponent implements OnInit {
   options: FormGroup;

@@ -7,9 +7,10 @@ import { finalize, takeUntil } from 'rxjs/operators';
 import { LoaderComponent } from '../loader/loader.component';
 
 @Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss']
+    selector: 'app-search',
+    templateUrl: './search.component.html',
+    styleUrls: ['./search.component.scss'],
+    standalone: false
 })
 export class SearchComponent implements OnInit, OnDestroy {
   jobs = [];
