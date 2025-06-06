@@ -8,7 +8,7 @@
     }
     #input_container {
         display: flex;
-        justify-content: end;
+        justify-content: flex-end;
         mat-form-field {
             margin-right: 60px;
             #check_button {
