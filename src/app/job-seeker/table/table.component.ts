@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Observable, of, Subject } from 'rxjs';
 import { en, faker } from '@faker-js/faker';
 import { TableService } from './table.service';
-
-enum Aircraft {
-  Boeing737 = "Boeing737",
-  AirbusA320 = "AirbusA320",
-  Concorde = "Concorde",
-}
-
-export type AircraftType = `${Aircraft}`;
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
     selector: 'app-table',
@@ -18,12 +11,18 @@ export type AircraftType = `${Aircraft}`;
     standalone: false
 })
 
-export class TableComponent implements OnInit {
+export class TableComponent implements OnInit, OnDestroy {
+  private destroy$ = new Subject<void>();
   
   constructor(private tableService: TableService) {
   }
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+
   ngOnInit(): void {
-    this.columns.subscribe((col) => {
+    this.columns.pipe(takeUntil(this.destroy$)).subscribe((col) => {
       this.oldColumns = [...col.slice( 0, this.rowsCount )];
     })
   }

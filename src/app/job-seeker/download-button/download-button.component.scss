@@ -1,8 +1,10 @@
 button {
     width: auto;
-    background: #faa6a6;
+    background: var(--primary-10) !important;
+    color: var(--primary-90) !important;
     &:hover {
-        background: #fcb8b8;
+        --color-base: #eea0d3cc;
+        background: var(--primary-05);
     }
     display: block;
     font-weight: 500;
@@ -11,14 +13,14 @@ button {
     font-size: 1.375rem;
     border-radius: 6px;
     margin-top: 20px;
-    -webkit-box-shadow: 0 7px 4px #c1baba;
-    -moz-box-shadow: 0 7px 4px #c1baba;
-    box-shadow: 0 7px 4px #c1baba;
+    -webkit-box-shadow: 0 7px 4px var(--primary-20);
+    -moz-box-shadow: 0 7px 4px var(--primary-20);
+    box-shadow: 0 7px 4px var(--primary-20);
     cursor: pointer;
     &:hover {
-        -webkit-box-shadow: 0 5px 2px #b5a7a7;
-        -moz-box-shadow: 0 5px 2px #b5a7a7;
-        box-shadow: 0 5px 2px #b5a7a7;
+        -webkit-box-shadow: 0 5px 2px var(--primary-30);
+        -moz-box-shadow: 0 5px 2px var(--primary-30);
+        box-shadow: 0 5px 2px var(--primary-30);
     }
     &:disabled {
         cursor: not-allowed;

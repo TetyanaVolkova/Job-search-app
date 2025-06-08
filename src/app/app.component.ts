@@ -1,21 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal, WritableSignal } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    standalone: false
+    standalone: false,
 })
 export class AppComponent implements OnInit {
+  readonly color = signal('#7D0CED');
+  isDarkMode: WritableSignal<boolean> = signal(false);
+
   constructor(public router: Router) {}
 
   ngOnInit(): void {
     this.router.initialNavigation();
-    console.log(this.router);
   }
 
   navigateToWebPage(): void {
     window.location.href = 'https://tetyanavolkova.com/'
   }
+
+  onChange(event: string): void {
+    
+  }
+
+  toggleDarkMode() {
+    this.isDarkMode.update(v => !v);
+  }
+
 }

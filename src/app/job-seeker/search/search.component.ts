@@ -32,7 +32,7 @@ export class SearchComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.httpService.getJobs(null)
-    .pipe()
+    .pipe(takeUntil(this.destroy$))
     .subscribe({
       next: (jobs) => {
         this.jobs = jobs['jobs'];
@@ -53,7 +53,7 @@ export class SearchComponent implements OnInit, OnDestroy {
     .pipe(takeUntil(this.destroy$),
       finalize(() => {
         this.httpService.setLoader(false);
-        myForm.form.controls.search.setValue('');
+        // myForm.form.controls.search.setValue('');
       }))
     .subscribe((jobs) => {
       this.jobs = jobs['jobs'];

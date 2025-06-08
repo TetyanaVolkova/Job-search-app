@@ -1,5 +1,7 @@
 :host {
     width: 100%;
+    background-color: var(--primary-05);
+    color: var(--primary-90);
     #note {
         margin: 20px 100px;
         text-align: end;
@@ -7,12 +9,12 @@
     }
 
     #search_button {
-        background: #d8ddec;
-        color: black;
+        background: var(--primary-10);
+        color: var(--primary-80);
         margin-left: 10px;
         cursor: pointer;
         &:hover {
-            background: #b2c2f2 !important;
+            background: var(--primary-05) !important;
         }
     }
 }
@@ -21,6 +23,9 @@ mat-accordion {
     gap: 3px;
     display: flex;
     flex-direction: column;
+    mat-expansion-panel { 
+        background-color: var(--primary-20);
+    }
 }
 
 .card {
@@ -29,6 +34,8 @@ mat-accordion {
     justify-content: space-between;
     width: 36vw;
     height: 180px;
+    background: var(--primary-20);
+    color: var(--primary-80);
 }
 
 #cards_wrapper {
@@ -92,7 +99,7 @@ form {
     width: calc(100vw - 180px);
     position: fixed;
     display: flex;
-    z-index: 99999999;
+    // z-index: 99999999;
     top: 72px;
     left: 140px;
     .mat-card-content p:first-child {
@@ -128,21 +135,23 @@ mat-panel-title {
     font-size: 16px;
     text-transform: uppercase;
     font-weight: 500;
+
+    color: var(--primary-80);
 }
 
 mat-panel-description {
-    color: black;
+    color: var(--primary-80);
     font-size: 16px;
 }
 
 .mat-custom {
-    background: #f4eeee;
-    color: rgb(130, 3, 3);
+    background: var(--primary-10);
+    color: var(--primary-70);
     border-style: solid;
-    border-color: #c2c1c1;
+    border-color: var(--primary-30);
     font-size: 14px;
     font-weight: 500;
     &:hover {
-        background: #e7c9c9;
+        background: var(--primary-05);
     }
 }

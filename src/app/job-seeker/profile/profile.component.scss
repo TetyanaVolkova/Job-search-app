@@ -1,17 +1,29 @@
-.profile_card {
-    width: 80%;
-    margin: auto;
-    .img_container {
-        width: 100%;
-        img {
-            width: 100%;
-            height: auto;
-            margin: auto;
+:host {
+    height: 80vh;
+    .profile_card {
+        width: 80%;
+        margin: auto;
+        background-color: var(--primary-05);
+        mat-card-actions {
+            display: flex;
+            gap: 20px;
+            button {
+                background-color: var(--primary-10);
+                color: var(--primary-90);
+            }
+        }
+        .img_container {
+            width: 60%;
+            img {
+                width: 100%;
+                height: auto;
+                margin: auto;
+            }
         }
     }
-}
 
-.profile_header_image {
-    background-image: url('/assets/images/avatar.jpg');
-    background-size: cover;
+    .profile_header_image {
+        background-image: url('/assets/images/avatar.jpg');
+        background-size: cover;
+    }
 }
