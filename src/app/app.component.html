@@ -1,17 +1,20 @@
-   <div [style.--color-base]="color()" [style.color-scheme]="isDarkMode()? 'dark': 'light'">
-        <mat-toolbar fxLayout="row" color="primary">
-            <h5>TETYANA VOLKOVA CODE EXAMPLES</h5>
-            <div id="input_container">
-                <button id="icon_container" (click)="toggleDarkMode()">
-                    <mat-icon *ngIf="!isDarkMode()">dark_mode</mat-icon>
-                    <mat-icon *ngIf="isDarkMode()">light_mode</mat-icon>
-                </button>
-                <input type="color" [(ngModel)]="color" (ngModelChange)="onChange($event)">
-            </div>
-            <small (click)="navigateToWebPage()">Back to About Me Page</small>
-            <button (click)="navigateToWebPage()" mat-icon-button>
-                <mat-icon>logout</mat-icon>
+<div [style.--color-base]="color()" [style.color-scheme]="isDarkMode()? 'dark': 'light'">
+    <mat-toolbar fxLayout="row" color="primary">
+        <div id="input_container">
+            <button id="icon_container" (click)="toggleDarkMode()">
+                <mat-icon *ngIf="!isDarkMode()">dark_mode</mat-icon>
+                <mat-icon *ngIf="isDarkMode()">light_mode</mat-icon>
             </button>
-        </mat-toolbar>
-        <router-outlet></router-outlet>
-   </div> 
+            <input type="color" [(ngModel)]="color" (ngModelChange)="onChange($event)">
+        </div>
+        <h5>CODE EXAMPLES</h5>
+        <small (click)="navigateToWebPage()">About Me</small>
+        <button (click)="navigateToWebPage()" mat-icon-button>
+            <mat-icon>logout</mat-icon>
+        </button>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+    
+    <app-personal-assistant></app-personal-assistant>
+</div>
+

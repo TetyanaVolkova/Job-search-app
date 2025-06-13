@@ -26,6 +26,12 @@ button {
         cursor: not-allowed;
     }
 }
+    
+@media screen and (max-width: 44rem) {
+    button {
+        width: 195px;
+    }
+}
 
 #download_popup {
     display: flex;

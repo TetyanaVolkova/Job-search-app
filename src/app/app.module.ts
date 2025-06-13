@@ -33,6 +33,7 @@ import { TableComponent } from './job-seeker/table/table.component';
 import { KeysPipe } from './job-seeker/table/keys-pipe.pipe';
 import { DownloadButtonComponent } from './job-seeker/download-button/download-button.component';
 import { LoaderComponent } from './job-seeker/loader/loader.component';
+import { PersonalAssistantComponent } from './job-seeker/personal-assistant/personal-assistant.component';
 
 
 @NgModule({ declarations: [
@@ -52,7 +53,9 @@ import { LoaderComponent } from './job-seeker/loader/loader.component';
         KeysPipe
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    bootstrap: [AppComponent], imports: [BrowserModule,
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
         CommonModule,
         RouterModule,
         AppRoutingModule,
@@ -70,5 +73,6 @@ import { LoaderComponent } from './job-seeker/loader/loader.component';
         MatCardModule,
         MatTooltipModule,
         MatDividerModule,
+        PersonalAssistantComponent,
         MatExpansionModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }

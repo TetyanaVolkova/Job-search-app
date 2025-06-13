@@ -1,157 +1,180 @@
 :host {
-    width: 100%;
-    background-color: var(--primary-05);
-    color: var(--primary-90);
+  width: 100%;
+  background-color: var(--primary-05);
+  color: var(--primary-90);
+  #note {
+    margin: 20px 100px;
+    text-align: end;
+    font-size: 18px;
+  }
+  @media screen and (max-width: 500px) {
     #note {
-        margin: 20px 100px;
-        text-align: end;
-        font-size: 18px;
+      margin: 20px 16px;
     }
+  }
 
-    #search_button {
-        background: var(--primary-10);
-        color: var(--primary-80);
-        margin-left: 10px;
-        cursor: pointer;
-        &:hover {
-            background: var(--primary-05) !important;
-        }
+  #search_button {
+    background: var(--primary-10);
+    color: var(--primary-80);
+    margin-left: 10px;
+    cursor: pointer;
+    &:hover {
+      background: var(--primary-05) !important;
     }
+  }
 }
 
 mat-accordion {
-    gap: 3px;
-    display: flex;
-    flex-direction: column;
-    mat-expansion-panel { 
-        background-color: var(--primary-20);
-    }
+  gap: 3px;
+  display: flex;
+  flex-direction: column;
+  mat-expansion-panel {
+    background-color: var(--primary-20);
+  }
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 36vw;
-    height: 180px;
-    background: var(--primary-20);
-    color: var(--primary-80);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 36vw;
+  height: 180px;
+  background: var(--primary-20);
+  color: var(--primary-80);
 }
 
 #cards_wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
 }
 
 ::ng-deep .mat-mdc-card-content {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    margin-left: 20px;
-    overflow: auto;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-left: 20px;
+  overflow: auto;
 }
 
 .job-match-radar-chart {
-    width: 250px;
-    position: fixed;
-    top: 190px;
-    right: 80px;
+  width: 250px;
+  position: fixed;
+  top: 190px;
+  right: 80px;
 }
 
 .mat-card-content p:first-child {
-    overflow: auto;
-    flex-grow: 1;
+  overflow: auto;
+  flex-grow: 1;
 }
 
 .fave_button {
-    color: rgb(144, 144, 144);
+  color: rgb(144, 144, 144);
 }
 
 .fave_button:hover {
-    color: red;
-    background: rgb(247, 231, 231);
+  color: red;
+  background: rgb(247, 231, 231);
 }
 
 small {
-    color: rgb(5, 43, 168);
+  color: rgb(5, 43, 168);
 }
 
 ::ng-deep .mat-card-actions {
-    display: flex !important;
-    justify-content: flex-end;
+  display: flex !important;
+  justify-content: flex-end;
 }
 
 form {
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
 }
 
 .mat-divider {
-    width: 80%;
-    margin: auto;
+  width: 80%;
+  margin: auto;
 }
 
 .more_details {
-    height: calc(100vh - 110px);
-    width: calc(100vw - 180px);
-    position: fixed;
-    display: flex;
-    // z-index: 99999999;
-    top: 72px;
-    left: 140px;
-    .mat-card-content p:first-child {
-        padding: 24px;
-    }
+  height: calc(100vh - 110px);
+  width: calc(100vw - 180px);
+  position: fixed;
+  display: flex;
+  // z-index: 99999999;
+  top: 72px;
+  left: 140px;
+  .mat-card-content p:first-child {
+    padding: 24px;
+  }
+}
+
+@media screen and (max-width: 44rem) {
+  .more_details {
+    height: calc(100vh - 155px);
+  }
 }
 
 .overflow_hidden {
-    height: 0;
-    overflow: hidden;
+  height: 0;
+  overflow: hidden;
 }
 
 #chart_view {
-    height: 75vh;
-    width: 88%;
-    margin: 25px auto;
+  height: 75vh;
+  width: 88%;
+  margin: 25px auto;
 }
 
 iframe {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 #forms_wrapper {
-    display: flex;
+  display: flex;
+}
+
+@media screen and (max-width: 44rem) {
+  #forms_wrapper {
+    flex-direction: column;
+  }
+  form {
+    width: auto;
+  }
+  ::ng-deep .mat-mdc-form-field-infix {
+    width: 120px !important;
+  }
 }
 
 #toggle_form {
-    margin-top: 18px;
+  margin-top: 18px;
 }
 
 mat-panel-title {
-    font-size: 16px;
-    text-transform: uppercase;
-    font-weight: 500;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 500;
 
-    color: var(--primary-80);
+  color: var(--primary-80);
 }
 
 mat-panel-description {
-    color: var(--primary-80);
-    font-size: 16px;
+  color: var(--primary-80);
+  font-size: 16px;
 }
 
 .mat-custom {
-    background: var(--primary-10);
-    color: var(--primary-70);
-    border-style: solid;
-    border-color: var(--primary-30);
-    font-size: 14px;
-    font-weight: 500;
-    &:hover {
-        background: var(--primary-05);
-    }
+  background: var(--primary-10);
+  color: var(--primary-70);
+  border-style: solid;
+  border-color: var(--primary-30);
+  font-size: 14px;
+  font-weight: 500;
+  &:hover {
+    background: var(--primary-05);
+  }
 }

@@ -9,10 +9,11 @@
 //     accent: mat.m2-define-palette(mat.$m2-pink-palette),
 //   )
 // ));
-
 html,
 body {
     height: 100%;
+    overflow: hidden;
+
 }
 
 body {
@@ -71,12 +72,29 @@ body {
 }
 
 :root {
-  --color-base: hsl(161, 90%, 49%);
+  --color-base: #100CED;
+  // --color-base: hsl(161, 90%, 49%);
   // --color-base: #7D0CED;
   color-scheme: light dark;
+  
+  // @include mat.theme((
+  //   color: (
+  //     theme-type: light,
+  //     primary: mat.$rose-palette,
+  //     tertiary: mat.$yellow-palette,
+  //   ),
+  //   typography: (
+  //     plain-family: Robato,
+  //     brand-family: Segoe UI,
+  //     regular-weight: 100,
+  //     medium-weight: 700,
+  //   ),
+  //   density: -5,
+  // ));
 }
 
 .mat-toolbar.mat-primary {
+    // font-size: var(--mat-sys-title-small-size);
     // --color-base: #ec750d;
     color: var(--primary-80);
     background: var(--primary-30);

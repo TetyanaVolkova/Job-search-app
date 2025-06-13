@@ -8,15 +8,15 @@
         color: var(--primary-90);
     }
     .explanation {
-        font-size: 18px;
+        font-size: 12px;
         margin: 20px 40px;
-        font-weight: bold;
+        // font-weight: bold;
     }
     #input_container {
         display: flex;
         justify-content: flex-end;
         mat-form-field {
-            margin-right: 60px;
+            margin: 12px;
             #check_button {
                 margin: 0;
                 background: var(--primary-30);
@@ -41,6 +41,7 @@
         display: flex;
         width: 92%;
         margin: auto;
+        overflow: auto;
     }
     
     .error {
@@ -78,7 +79,7 @@
     }
     
     .actions {
-        padding: 35px 60px;
+        padding: 14px 10px;
         display: flex;
         justify-content: flex-end;
         gap: 3%;
@@ -149,6 +150,15 @@
         }
         &:disabled {
             cursor: not-allowed;
+        }
+    }
+
+    @media screen and (max-width: 44rem) {
+        .actions {
+            justify-content: center;
+        }
+        .add_column, .remove_column {
+            width: 195px;
         }
     }
     

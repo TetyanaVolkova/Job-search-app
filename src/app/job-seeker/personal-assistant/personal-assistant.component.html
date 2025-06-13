@@ -1,0 +1,45 @@
+<div class="chat-container">
+    <div class="chat_header">
+        <button mat-icon-button (click)="toggleChat()">
+            <mat-icon>{{ isClosed ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</mat-icon>
+        </button>
+        <div class="header_content">
+            <h4 class="subtitle">Tetyana AI-powered personal assistant</h4>
+        </div>
+    </div>
+  <div #scrollContainer class="chat-messages" [ngClass]="{'closed': isClosed}">
+    <div *ngFor="let msg of messages" [ngClass]="msg.sender">
+      <div class="bubble">{{ msg.text }}</div>
+    </div>
+  </div>
+
+  <div [ngClass]="{'closed': isClosed}" class="chat-input">
+    <input [(ngModel)]="userInput" (keydown.enter)="sendMessage()" placeholder="Ask me anything..." />
+    <button mat-raised-button (click)="sendMessage()">Send</button>
+  </div>
+</div>
+<!-- <div class="chat-container" [class.closed]="isClosed">
+  <mat-toolbar class="chat-header" color="primary">
+    <div class="header-content">
+      <div>
+        <span class="title">Personal Assistant</span>
+        <span class="subtitle">AI-powered assistant</span>
+      </div>
+      <button mat-icon-button (click)="toggleChat()">
+        <mat-icon>{{ isClosed ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+
+  <div *ngIf="!isClosed">
+    <div #scrollContainer class="chat-messages">
+      <div *ngFor="let msg of messages" [ngClass]="msg.sender">
+        <div class="bubble">{{ msg.text }}</div>
+      </div>
+    </div>
+    <div class="chat-input">
+      <input [(ngModel)]="userInput" (keydown.enter)="sendMessage()" placeholder="Ask me anything..." />
+      <button mat-raised-button (click)="sendMessage()">Send</button>
+    </div>
+  </div>
+</div> -->

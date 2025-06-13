@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
     standalone: false,
 })
 export class AppComponent implements OnInit {
-  readonly color = signal('#7D0CED');
+  readonly color = signal('#b1ed0c');
   isDarkMode: WritableSignal<boolean> = signal(false);
 
   constructor(public router: Router) {}

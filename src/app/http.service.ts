@@ -16,6 +16,10 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
 
+  getChat() {
+    return this.http.get('https://ttmtca0n21.execute-api.us-east-1.amazonaws.com/prod/conversations/data/conversations');
+  }
+
   getJobs(search) {
     if(search === null) {
       return this.http.get('https://remotive.com/api/remote-jobs?category=software-dev&limit=20').pipe(
